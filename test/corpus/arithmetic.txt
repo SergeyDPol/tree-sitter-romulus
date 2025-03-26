@@ -1,0 +1,217 @@
+===============
+Number addition
+===============
+
+Grafo X + II
+
+---
+(source_file
+	(print_statement
+		(addition
+			(number)
+			(number))))
+
+============================
+Number and variable addition
+============================
+
+Grafo X + a
+
+---
+(source_file
+	(print_statement
+		(addition
+			(number)
+			(identifier))))
+
+============================
+Variable and number addition
+============================
+
+Grafo a + X
+
+---
+(source_file
+	(print_statement
+		(addition
+			(identifier)
+			(number))))
+
+==============================
+Variable and variable addition
+==============================
+Grafo a + b
+
+---
+(source_file
+	(print_statement
+		(addition
+			(identifier)
+			(identifier))))
+
+==================
+Number subtraction
+==================
+
+Grafo X - II
+
+---
+(source_file
+	(print_statement
+		(subtraction
+			(number)
+			(number))))
+
+===============================
+Number and variable subtraction
+===============================
+
+Grafo X - a
+
+---
+(source_file
+	(print_statement
+		(subtraction
+			(number)
+			(identifier))))
+
+===============================
+Variable and number subtraction
+===============================
+
+Grafo a - II
+
+---
+(source_file
+	(print_statement
+		(subtraction
+			(identifier)
+			(number))))
+
+=================================
+Variable and variable subtraction
+=================================
+Grafo a - b
+
+---
+(source_file
+	(print_statement
+		(subtraction
+			(identifier)
+			(identifier))))
+
+=====================
+Number multiplication
+=====================
+
+Grafo X * II
+
+---
+(source_file
+	(print_statement
+		(multiplication
+			(number)
+			(number))))
+
+==================================
+Number and variable multiplication
+==================================
+
+Grafo X * a
+
+---
+(source_file
+	(print_statement
+		(multiplication
+			(number)
+			(identifier))))
+
+==================================
+Variable and number multiplication
+==================================
+
+Grafo a * II
+
+---
+(source_file
+	(print_statement
+		(multiplication
+			(identifier)
+			(number))))
+
+====================================
+Variable and variable multiplication
+====================================
+Grafo a * b
+
+---
+(source_file
+	(print_statement
+		(multiplication
+			(identifier)
+			(identifier))))
+
+=============
+Number modulo
+=============
+
+Grafo X % II
+
+---
+(source_file
+	(print_statement
+		(modulo
+			(number)
+			(number))))
+
+==========================
+Number and variable modulo
+==========================
+
+Grafo X % a
+
+---
+(source_file
+	(print_statement
+		(modulo
+			(number)
+			(identifier))))
+
+==========================
+Variable and number modulo
+==========================
+
+Grafo a % II
+
+---
+(source_file
+	(print_statement
+		(modulo
+			(identifier)
+			(number))))
+
+============================
+Variable and variable modulo
+============================
+Grafo a % b
+
+---
+(source_file
+	(print_statement
+		(modulo
+			(identifier)
+			(identifier))))
+
+===========================
+Addition left associativity
+===========================
+Grafo a + b + c
+
+---
+(source_file
+	(print_statement
+		(addition
+			(addition
+				(identifier)
+				(identifier))
+			(identifier))))
