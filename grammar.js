@@ -42,9 +42,9 @@ module.exports = grammar({
 
     branching: $ => seq(
       "Sinon", 
-      field("condition", $._expression),
-      field("false_branch", $._expression),
-      field("true_branch", $._expression)
+      field("condition", $._simple_expression),
+      field("false_branch", $._simple_expression),
+      field("true_branch", $._simple_expression)
     ),
 
     function_definition: $ => seq(
@@ -55,9 +55,9 @@ module.exports = grammar({
       field("body", $._expression)
     ),
 
-    function_call: $ => prec.right(seq(
+    function_call: $ => prec.left(seq(
       field("function", $.identifier),
-      repeat1($._simple_expression)
+      repeat1($._parenthesized_expression)
     )),
 
     variable_definition: $ => seq(
@@ -79,13 +79,13 @@ module.exports = grammar({
     ),
 
     _parenthesized_expression: $ => seq("(", $._expression, ")"),
-    _simple_expression: $ => prec(1, choice(
+    _simple_expression: $ => choice(
       $._parenthesized_expression,
-      $.branching,
       $._arithmetic_expression,
+      $.branching,
       $.number,
       $.identifier
-    )),
+    ),
     _expression: $ => choice(
       $._simple_expression,
       $.function_call
